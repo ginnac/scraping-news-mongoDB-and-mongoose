@@ -35,6 +35,18 @@ mongoose.connect("mongodb://localhost/scrapingNews", { useNewUrlParser: true });
 
 //routes...code below
 
+//go ahead and scrape
+
+
+//after scraping take the scraped data, post and store it in the database
+
+//then create route to get all data and write in handlebars
+
+//then for when user clicks on a specific article, post api route to let them create a new note
+//api route to get note from a specific article
+//api route to delete note
+//api to update note
+
 
 
 // Start our server so that it can begin listening to client requests.
