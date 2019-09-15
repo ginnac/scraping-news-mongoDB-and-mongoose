@@ -35,6 +35,10 @@ mongoose.connect("mongodb://localhost/scrapingNews", { useNewUrlParser: true });
 
 //routes...code below
 
+require("./routes/scrape-route.js")(app);
+require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
+
 //go ahead and scrape
 
 
@@ -44,6 +48,8 @@ mongoose.connect("mongodb://localhost/scrapingNews", { useNewUrlParser: true });
 
 //then for when user clicks on a specific article, post api route to let them create a new note
 //api route to get note from a specific article
+
+
 //api route to delete note
 //api to update note
 
