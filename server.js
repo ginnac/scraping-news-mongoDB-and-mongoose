@@ -39,10 +39,7 @@ require("./routes/scrape-route.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
-//go ahead and scrape
 
-
-//after scraping take the scraped data, post and store it in the database
 
 //then create route to get all data and write in handlebars
 
