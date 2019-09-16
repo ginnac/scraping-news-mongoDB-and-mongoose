@@ -40,7 +40,7 @@ require("./routes/scrape-route.js")(app);
 
 
 
-//then create route to get all data and write in handlebars
+
 
 //then for when user clicks on a specific article, post api route to let them create a new note
 //api route to get note from a specific article
