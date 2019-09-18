@@ -1,12 +1,15 @@
-<h1>Articles to Read</h1>
+<h1>News to Watch</h1>
 
-<h2>Articles of the day:</h2>
+<h2>Business News of the Day:</h2>
 
 <ul>
   {{#each articles}}
     <li>
-        {{title}}
-        <p>To view Article, click <a href={{link}}>Here</a></p>
+        
+        <h3>{{title}}</h3>
+        <h5>{{body}}</h5>
+        <a href={{link}}><img src={{image}}></a>
+        <p>Click on the picture to see video.</p>
     </li>
   
   {{/each}}
@@ -29,3 +32,6 @@
   <button type="submit">Save Note</button>
   <button type="submit">Update Note</button>
 </form>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/js/news.js"></script>
