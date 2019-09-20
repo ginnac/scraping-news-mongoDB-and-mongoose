@@ -10,28 +10,32 @@
         <h5>{{body}}</h5>
         <a href={{link}}><img src={{image}}></a>
         <p>Click on the picture to see video.</p>
+
+        <div>
+            <div id="comments-left">
+                <p>{{comment.name}} said: {{comment.body}}.</p>
+                <br><br>
+            </div>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="note-title">Your Nickname:</label>
+                    <input type="text" id="note-title" name="note-title">
+                </div>
+
+                <div class="form-group">
+                    <label for="note-body">Comment:</label><br>
+                    <textarea name="note-body" id="note-body" cols="30" rows="10"></textarea> <br>
+                </div>
+
+                <button id = "saveBtn" data-id="{{_id}}" type="submit">Leave Comment</button>
+            </form>
+        </div>
     </li>
   
   {{/each}}
 </ul>
 
-
-<h2>Your Notes:</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="note-title">Title:</label>
-    <input type="text" id="note-title" name="note-title">
-  </div>
-
-  <div class="form-group">
-    <label for="note-body">Body:</label><br>
-    <textarea name="note-body" id="note-body" cols="30" rows="10"></textarea> <br>
-  </div>
-
-  <button type="submit">Save Note</button>
-  <button type="submit">Update Note</button>
-</form>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/assets/js/news.js"></script>

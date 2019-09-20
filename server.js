@@ -37,6 +37,7 @@ mongoose.connect("mongodb://localhost/scrapingNews", { useNewUrlParser: true });
 
 require("./routes/scrape-route.js")(app);
 require("./routes/html-routes.js")(app)
+require("./routes/api-routes.js")(app)
 
 
 

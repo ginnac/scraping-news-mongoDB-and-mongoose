@@ -24,20 +24,20 @@ module.exports = function(app) {
   
         // Add the text, src and href of every link, and save them as properties of the result object
         result.title = $(this)
-         .children("h3").children("a").text();
+         .children("h3").children("a").text().trim();
          result.body = $(this)
-         .children("p").text();
+         .children("p").text().trim();
          result.image = $(this)
-          .children("div.m").children("a").children("img").attr("src");
+          .children("div.m").children("a").children("img").attr("src").trim();
         result.link = $(this)
-          .children("div.m").children("a").attr("href");
+          .children("div.m").children("a").attr("href").trim();
     
         //after scraping take the scraped data,
-
+            setTimeout(articleConsole, 2000); 
             //lets find the article by title and if not saved in database then create
             db.Article.findOne({title:result.title}).then(function(dbArticle){
             
-                //res.json(dbArticle);
+            console.log(dbArticle);
 
             if(!dbArticle){
         
@@ -62,7 +62,9 @@ module.exports = function(app) {
         
         //post and store it in the database
         // Create a new Article using the `result` object built from scraping
-        
+            function articleConsole(){
+                console.log("article saved")
+            };          
         });
   
         // Send a message to the client
