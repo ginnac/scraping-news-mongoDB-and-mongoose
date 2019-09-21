@@ -8,7 +8,8 @@ var ArticleSchema = new Schema({
 
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   
   body: {
@@ -23,11 +24,19 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
+
+  date: {
+    type: Date,
+    default: Date.now
+  },
+
   // note is an object that stores a Note id
-  comment: {
+  comments: [
+    {  
     type: Schema.Types.ObjectId,
     ref: "Comment"
-  }
+    }
+  ]
 });
 
 // This creates our model from the above schema, using mongoose's model method

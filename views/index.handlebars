@@ -12,26 +12,43 @@
         <p>Click on the picture to see video.</p>
 
         <div>
-            <div id="comments-left">
-                <p>{{comment.name}} said: {{comment.body}}.</p>
-                <br><br>
-            </div>
+            <ul>Comments:
+              {{#each comments}}
+              <li>
+                  <p>{{name}} said: {{body}}
+                      <button data-id={{_id}} + id='deleteBtn'>Delete Comment</button>
+                  </p>
+              </li>
+              
+              {{/each}}
+
+              <li class="changeable-div">
+                  <div id="comments-left-{{_id}}"></div>
+              </li>
+            </ul> 
+           
+            
             <form class="create-form">
 
                 <div class="form-group">
                     <label for="note-title">Your Nickname:</label>
-                    <input type="text" id="note-title" name="note-title">
+                    <input type="text" id="note-title-{{_id}}" name="note-title">
                 </div>
 
                 <div class="form-group">
                     <label for="note-body">Comment:</label><br>
-                    <textarea name="note-body" id="note-body" cols="30" rows="10"></textarea> <br>
+                    <textarea name="note-body" id="note-body-{{_id}}" cols="50" rows="3"></textarea> <br>
                 </div>
 
-                <button id = "saveBtn" data-id="{{_id}}" type="submit">Leave Comment</button>
+                <button id="saveBtn" data-id="{{_id}}" type="submit">Leave Comment</button>
             </form>
         </div>
     </li>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   
   {{/each}}
 </ul>
