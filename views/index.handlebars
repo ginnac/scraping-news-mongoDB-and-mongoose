@@ -1,22 +1,34 @@
-<h1>News to Watch</h1>
 
-<h2>Business News of the Day:</h2>
+<nav id="bar" class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand collapse navbar-collapse" href="#" id="navbarTogglerDemo01">
+      <img id="logo" src="http://phylolab.org/wp-content/uploads/2015/12/news_logo_round2-300x300.png" class="d-inline-block align-center" width="100" height="100" alt="">
+       News of the Day, everyday!
+  </a>
 
-<ul>
+
+  <span class="navbar-text">
+      <h6 class="title">News to Watch</h6> 
+    </span>
+</nav>  
+
+<div class= "container">
+  
+<ul class="row"> 
   {{#each articles}}
-    <li>
+  
+    <li class="col-lg-6 col-md-12 col-sm-12 row articles-group">
+        <div class="card div-box">
+        <h3 class="article-title">{{title}}</h3>
+        <h5 class="">{{body}}</h5>
+        <a class="" href={{link}}><img class="video" src={{image}}> <img id="play" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png"></a>
+     
         
-        <h3>{{title}}</h3>
-        <h5>{{body}}</h5>
-        <a href={{link}}><img src={{image}}></a>
-        <p>Click on the picture to see video.</p>
-
-        <div>
-            <ul>Comments:
+        <div class= "w-100">
+            <ul> <h6 class="comments-tag">Comments:</h6>
               {{#each comments}}
               <li>
                   <p>{{name}} said: {{body}}
-                      <button data-id={{_id}} + id='deleteBtn'>Delete Comment</button>
+                      <button data-id={{_id}} + id='deleteBtn' type="button" class="btn btn-primary btn-sm">Delete Comment</button>
                   </p>
               </li>
               
@@ -28,30 +40,31 @@
             </ul> 
            
             
-            <form class="create-form">
-
-                <div class="form-group">
-                    <label for="note-title">Your Nickname:</label>
+            <form class="create-form form-box">
+                <h6 class="comments-tag">Leave a Comment:</h6>
+                <div class="w-100 form-group">
+                    <label class="w-100" for="note-title">Your Nickname:</label>
                     <input type="text" id="note-title-{{_id}}" name="note-title">
                 </div>
 
-                <div class="form-group">
+                <div class="w-100 form-group">
                     <label for="note-body">Comment:</label><br>
-                    <textarea name="note-body" id="note-body-{{_id}}" cols="50" rows="3"></textarea> <br>
+                    <textarea name="note-body" id="note-body-{{_id}}"></textarea> <br>
                 </div>
 
-                <button id="saveBtn" data-id="{{_id}}" type="submit">Leave Comment</button>
+                <button id="saveBtn" data-id="{{_id}}" type="submit" type="button" class="btn btn-primary btn-lg">Leave Comment</button>
             </form>
         </div>
+        </div>
+
     </li>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
   
   {{/each}}
 </ul>
+
+</div>
+
 
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

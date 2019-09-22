@@ -85,6 +85,7 @@ $(document).on("click", "#deleteBtn", function(event) {
     event.preventDefault();
    
     var id = $(this).attr("data-id");
+    $(this).parent().parent().hide();
     console.log(id);
     $.ajax({
         method: "DELETE",
