@@ -5,11 +5,36 @@ body{
 .title{
     text-align: center;
     text-transform: capitalize;
-    color:black;
-    text-shadow: 3px 2px #cfd1d0;
-    font-size: 40px;
     font-weight:bold;
+    font-size: 35px;
    ;
+}
+
+.item {
+    margin-top: 5px;
+    color:white;
+    margin-right:5px;;
+
+}
+
+.item:hover{
+    color:black;
+}
+
+.box{
+    background-image: url("https://tse3.mm.bing.net/th?id=OIP._QUdxH9GZS703AVRf4rhAAHaE5&pid=Api&P=0");
+    text-align: center;
+    color: white;
+}
+
+.ti{
+font-weight:bold;
+
+}
+
+.ton:hover{
+    background-color: darkgreen;
+    border: darkgreen;
 }
 
 #bar{
@@ -48,8 +73,9 @@ body{
 }
 
 a{
-    font-size:35px;
+    
     font-weight:bold;
+    font-size:25px;
     
 }
 

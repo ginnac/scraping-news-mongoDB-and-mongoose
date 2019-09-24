@@ -1,15 +1,37 @@
 
-<nav id="bar" class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand collapse navbar-collapse" href="#" id="navbarTogglerDemo01">
-      <img id="logo" src="http://phylolab.org/wp-content/uploads/2015/12/news_logo_round2-300x300.png" class="d-inline-block align-center" width="100" height="100" alt="">
-       News of the Day, everyday!
-  </a>
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand title" href="/">
+  Mongo Scraper</a>
+  <button class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbar-list" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <span class="navbar-text">
-      <h6 class="title">News to Watch</h6> 
-    </span>
-</nav>  
+  <div class="navbar-collapse collapse" id="navbar-list" aria-expanded="false" style="height: 0px;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/saved">Saved Articles</a>
+      </li>
+      <li class="nav-item item">
+        <a id="scrape" class="ton btn btn-danger scrape-new">SCRAPE NEW ARTICLES!</a>
+      </li>
+      <li class="nav-item item">
+        <a id="clear" class="ton btn btn-danger clear">CLEAR ARTICLES!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron box">
+  <h1 class="display-3 ti">Mongo Scraper</h1>
+  <p class="lead ti">Fox Business Video News Edition</p>
+
+</div>
 
 <div class= "container">
   
@@ -18,43 +40,11 @@
   
     <li class="col-lg-6 col-md-12 col-sm-12 row articles-group">
         <div class="card div-box">
-        <h3 class="article-title">{{title}}</h3>
-        <h5 class="">{{body}}</h5>
-        <a class="" href={{link}}><img class="video" src={{image}}> <img id="play" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png"></a>
-     
-        
-        <div class= "w-100">
-            <ul> <h6 class="comments-tag">Comments:</h6>
-              {{#each comments}}
-              <li>
-                  <p>{{name}} said: {{body}}
-                      <button data-id={{_id}} + id='deleteBtn' type="button" class="btn btn-primary btn-sm">Delete Comment</button>
-                  </p>
-              </li>
-              
-              {{/each}}
-
-              <li class="changeable-div">
-                  <div id="comments-left-{{_id}}"></div>
-              </li>
-            </ul> 
-           
-            
-            <form class="create-form form-box">
-                <h6 class="comments-tag">Leave a Comment:</h6>
-                <div class="w-100 form-group">
-                    <label class="w-100" for="note-title">Your Nickname:</label>
-                    <input type="text" id="note-title-{{_id}}" name="note-title">
-                </div>
-
-                <div class="w-100 form-group">
-                    <label for="note-body">Comment:</label><br>
-                    <textarea name="note-body" id="note-body-{{_id}}"></textarea> <br>
-                </div>
-
-                <button id="saveBtn" data-id="{{_id}}" type="submit" type="button" class="btn btn-primary btn-lg">Leave Comment</button>
-            </form>
-        </div>
+        <h3 id="title-{{_id}}" class="article-title">{{title}}</h3>
+        <h5 id="body-{{_id}}" class="">{{body}}</h5>
+        <a id="link-{{_id}}" class="" href={{link}}><img id="img-{{_id}}" class="video" src={{image}}> <img id="play" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png"></a>
+        <button data-id={{_id}} id='saveArticleBtn' type="button" class="btn btn-primary btn-sm">Save Article 
+        </button>
         </div>
 
     </li>
@@ -66,6 +56,9 @@
 </div>
 
 
+<!-- Required scripts for Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/assets/js/news.js"></script>

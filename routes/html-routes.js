@@ -6,7 +6,7 @@ module.exports = function(app) {
 //then create route to get all data in mongo DB in handlebars listed
 
 app.get("/", function(req, res) {
-    db.Article.find({}).populate("comments").then(function(dbArticles) {
+    db.Article.find({}).then(function(dbArticles) {
       var dataObject = {
         articles: dbArticles
       };
@@ -15,6 +15,16 @@ app.get("/", function(req, res) {
     });
   });
 
+
+  app.get("/saved", function(req, res) {
+    db.Saved.find({}).populate("comments").then(function(dbSaved) {
+      var dataObject = {
+        articles: dbSaved
+      };
+      //console.log(dataObject);
+      res.render("saved", dataObject);
+    });
+  });
 
 
 }

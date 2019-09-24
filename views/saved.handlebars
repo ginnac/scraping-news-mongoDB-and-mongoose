@@ -1,0 +1,90 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand title" href="/">
+  Mongo Scraper</a>
+  <button class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar-list" aria-controls="navbar-list" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="navbar-list" aria-expanded="false" style="height: 0px;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item item">
+        <a id="clear-saved" class="ton btn btn-danger clear">CLEAR ARTICLES!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron box">
+  <h1 class="display-3 ti">Saved Articles</h1>
+  <p class="lead ti">Fox Business Video News Edition</p>
+
+</div>
+
+<div class= "container">
+  
+<ul class="row"> 
+  {{#each articles}}
+  
+    <li class="col-lg-6 col-md-12 col-sm-12 row articles-group">
+        <div class="card div-box">
+        <h3 class="article-title">{{title}}</h3>
+        <h5 class="">{{body}}</h5>
+        <a class="" href={{link}}><img class="video" src={{image}}> <img id="play" src="http://www.pngmart.com/files/3/Play-Button-PNG-Picture.png"></a>
+
+        
+        <div class="notes" class= "w-100">
+            <ul> <h6 class="comments-tag">Comments:</h6>
+              {{#each comments}}
+              <li>
+                  <p>{{name}} said: {{body}}
+                      <button data-id={{_id}} id='deleteBtn' type="button" class="btn btn-primary btn-sm">Delete Comment</button>
+                  </p>
+              </li>
+              
+              {{/each}}
+
+              <li class="changeable-div">
+                  <div id="comments-left-{{_id}}"></div>
+              </li>
+            </ul> 
+           
+            
+            <form class="create-form form-box">
+                <h6 class="comments-tag">Leave a Comment:</h6>
+                <div class="w-100 form-group">
+                    <label class="w-100" for="note-title">Your Nickname:</label>
+                    <input type="text" id="note-title-{{_id}}" name="note-title">
+                </div>
+
+                <div class="w-100 form-group">
+                    <label for="note-body">Comment:</label><br>
+                    <textarea name="note-body" id="note-body-{{_id}}"></textarea> <br>
+                </div>
+
+                <button id="saveBtn" data-id="{{_id}}" type="submit" type="button" class="btn btn-primary btn-lg">Leave Comment</button>
+            </form>
+        </div>
+        </div>
+
+    </li>
+    
+  
+  {{/each}}
+</ul>
+
+</div>
+
+
+<!-- Required scripts for Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script src="/assets/js/savedArticles.js"></script>
