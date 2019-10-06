@@ -17,18 +17,18 @@ module.exports = function(app) {
             var $ = cheerio.load(response.data);
             //var arTitles =[];
             // Now, we grab every h2 within an article tag, and do the following:
-            $("article.video-ct").each(function(i, element) {
+            $("article.story-1").each(function(i, element) {
  
                 // Save an empty result object
                 var result = {};
   
                 // Add the text, src and href of every link, and save them as properties of the result object
                 result.title = $(this)
-                .children("h3").children("a").text().trim();
+                .children("div.info").children("header").children("h3.title").children("a").text().trim();
                 result.body = $(this)
-                .children("p").text().trim();
+                .children("div.info").children("p").text().trim();
                 result.image = $(this)
-                .children("div.m").children("a").children("img").attr("src").trim();
+                .children("div.m").children("a").children("picture").children("img").attr("src").trim();
                 result.link = $(this)
                 .children("div.m").children("a").attr("href").trim();
            
