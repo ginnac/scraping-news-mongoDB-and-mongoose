@@ -1,6 +1,5 @@
 # Scraping news' Project
 
-# Clicky Game
 [Live Demo](https://news-mongoose.herokuapp.com/) 
 
 Mongo and Mongoose Project
